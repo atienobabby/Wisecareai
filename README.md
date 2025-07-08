@@ -39,8 +39,7 @@ Witness CareWise AI in action! This video will demonstrate:
 * Voice-driven "Ask AI" feature
 * Inclusive design for users with diverse needs
 
-**[Link to Your YouTube/X/TikTok Video Demo Here]**
-*(Replace with your video once uploaded, ensuring it's publicly accessible!)*
+
 
 ---
 
