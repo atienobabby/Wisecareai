@@ -4,7 +4,7 @@
 
 <img width="1920" height="1032" alt="CareWise AI Project Screenshot" src="https://github.com/user-attachments/assets/268bf9a6-a835-418f-8d7c-378c0cc2971c" />
 
-*(You can replace the above image with a custom banner or logo for CareWise AI if you wish. The current image shows a screenshot which is also great!)*
+
 
 ---
 
