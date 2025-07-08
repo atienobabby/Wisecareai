@@ -2,8 +2,9 @@
 
 **Empowering health access for everyone, everywhere, with on-device Gemma 3n intelligence.**
 
-<img width="1920" height="1032" alt="Image" src="https://github.com/user-attachments/assets/268bf9a6-a835-418f-8d7c-378c0cc2971c" />
+<img width="1920" height="1032" alt="CareWise AI Project Screenshot" src="https://github.com/user-attachments/assets/268bf9a6-a835-418f-8d7c-378c0cc2971c" />
 
+*(You can replace the above image with a custom banner or logo for CareWise AI if you wish. The current image shows a screenshot which is also great!)*
 
 ---
 
@@ -35,12 +36,12 @@ This project directly addresses the hackathon's call to build for impact, focusi
 
 Witness CareWise AI in action! This video will demonstrate:
 
-- Its offline capabilities
-- Voice-driven "Ask AI" feature
-- Inclusive design for users with diverse needs
+* Its offline capabilities
+* Voice-driven "Ask AI" feature
+* Inclusive design for users with diverse needs
 
-**[Link to Your YouTube/X/TikTok Video Demo Here]**  
-*(Replace with your video once uploaded)*
+**[Link to Your YouTube/X/TikTok Video Demo Here]**
+*(Replace with your video once uploaded, ensuring it's publicly accessible!)*
 
 ---
 
@@ -50,12 +51,12 @@ CareWise AI is engineered for tangible, positive impact:
 
 * **Bridging Connectivity Gaps:** Empowers users in rural, underserved, or disaster-affected areas with zero-internet medical guidance.
 * **Empowering the Visually Impaired:**
-  * Fully voice-interactive “Ask AI” experience
-  * Text outputs can be spoken aloud via browser-native speech synthesis
+    * Fully voice-interactive “Ask AI” experience allows users to speak complex medical questions and receive comprehensive spoken answers, significantly reducing reliance on visual interfaces.
+    * Text outputs can be spoken aloud via browser-native speech synthesis, ensuring critical guidance is always audibly accessible.
 * **Supporting the Hearing Impaired:**
-  * Clear, legible text responses
-  * Customizable font size and contrast settings for easy reading
-* **Ensuring Data Privacy:** All inference happens on-device using Ollama. Nothing is sent to external servers—no tracking, no leaks.
+    * Provides clear, legible text responses for all health suggestions and AI outputs.
+    * Customizable font size and contrast settings are available for optimal reading.
+* **Ensuring Data Privacy:** All AI inference happens entirely on-device using Ollama. No sensitive health information is sent to external servers, ensuring no tracking, no leaks, and fostering complete user trust.
 
 CareWise AI is more than just an app—it's a step toward equitable, **trusted**, and **independent** digital healthcare for everyone.
 
@@ -75,82 +76,106 @@ CareWise AI is more than just an app—it's a step toward equitable, **trusted**
 
 ## 🚀 Installation & Local Setup
 
-To run CareWise AI locally and experience the full power of Gemma 3n:
+To run CareWise AI locally and experience the full power of Gemma 3n, please follow these steps carefully:
 
 1.  **Prerequisites:**
-    * Node.js (LTS version recommended) & npm (or yarn)
-    * **Ollama:** Download and install Ollama from [ollama.ai](https://ollama.ai/). Ensure it's running in the background.
+    * Node.js (LTS version recommended) & npm (or yarn) installed on your system.
+    * **Ollama:** Download and install the Ollama application for your operating system from [ollama.ai](https://ollama.ai/).
 
 2.  **Pull Gemma 3n Model:**
-    ```bash
-    ollama pull gemma:4n
-    ```
-    *(You can use `gemma:2n` for lower memory usage if needed. Ensure your code config matches the model.)*
+    * Open your terminal or command prompt.
+    * Execute the following command to pull the specific Gemma 3n model used in this project:
+        ```bash
+        ollama pull gemma3n:e4b
+        ```
+        *(Note: It is crucial that this model tag `gemma3n:e4b` exactly matches the model specified in `src/services/healthAI.ts` for the "Ask AI" feature to function correctly.)*
 
-3.  **Clone the Repository:**
+3.  **Start Ollama Service (if not already running):**
+    * **Important:** Ollama runs as a background server that your CareWise AI application connects to.
+    * **On Windows/macOS:** Ollama typically starts automatically after installation or when you launch the Oll Ollama application from your system (e.g., Start Menu on Windows, Applications folder on macOS). Please ensure the Ollama application is actively running (you can usually check for its icon in your system tray or menu bar).
+    * **On Linux/manual setup:** You might need to explicitly start the Ollama server in a dedicated terminal window:
+        ```bash
+        ollama serve
+        ```
+        Keep this terminal window open while you are running and using CareWise AI.
+
+4.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/YourUsername/CareWiseAI.git  # Replace with your actual repo
+    git clone [https://github.com/YourUsername/CareWiseAI.git](https://github.com/YourUsername/CareWiseAI.git)  # Replace with your actual GitHub repository URL
     cd CareWiseAI
     ```
 
-4.  **Install Dependencies:**
+5.  **Install Dependencies:**
+    * Navigate into the cloned `CareWiseAI` directory in your terminal.
     ```bash
     npm install
     # or
     yarn install
     ```
 
-5.  **Run the Application:**
+6.  **Run the Application:**
     ```bash
     npm run dev
     # or
     yarn dev
     ```
-    Then visit `http://localhost:5173` in your browser.
+    This command will start the development server. CareWise AI should then open automatically in your default web browser, usually at `http://localhost:5173`.
 
 ---
 
 ## 💡 Usage
 
-* **Symptom Checker:** Go to the “Symptom Checker” page. Use the body diagram or describe symptoms in text. Click “Check Symptoms” for instant feedback.
-* **Ask AI:** Navigate to “Ask AI.” Click the microphone to speak your query or type it. The AI (Gemma 3n via Ollama) will respond with a local, intelligent answer.
-* **Accessibility Settings:** Use the settings panel to change font size, theme (dark/light), contrast, and motion preference for improved usability.
+* **Symptom Checker:** Navigate to the “Symptom Checker” page. You can use the interactive body diagram to select affected areas or simply describe your symptoms in the text input field. Click “Check Symptoms” for instant, rule-based health feedback and actionable steps.
+* **Ask AI:** Go to the “Ask AI” page for more complex and conversational queries. Click the microphone icon to speak your health question, or type it into the text box. The AI, powered by Gemma 3n locally on your device via Ollama, will respond with a detailed, intelligent answer. The response can also be listened to via the built-in speaker icon.
+* **Accessibility Settings:** Access the dedicated settings panel (usually a cog or accessibility icon) to customize your user experience. You can adjust font size, switch between dark and light themes, set high contrast modes, and reduce motion for improved usability based on your preferences.
 
 ---
 
 ## 📂 Project Structure Highlights
 
-* `src/components/` – Reusable UI (e.g., `BodyDiagram.tsx`, `SymptomForm.tsx`)
-* `src/components/SymptomCheckerPage.tsx` – Main rule-based symptom analysis page
-* `src/components/AskAIPage.tsx` – Conversational AI interface powered by Gemma 3n
-* `src/services/symptomChecker.ts` – Logic for rule-based symptom checking (non-AI)
-* `src/services/healthAI.ts` – Ollama + Gemma 3n integration logic
-* `src/hooks/useTextToSpeech.ts` – Text-to-Speech utility
-* `src/hooks/useVoiceInput.ts` – Speech-to-Text utility
-* `src/store/accessibilityStore.ts` – Zustand-based accessibility state
-* `public/` – Static assets
+* `src/components/` – Contains all reusable UI components (e.g., `BodyDiagram.tsx`, `SymptomForm.tsx`).
+* `src/components/SymptomCheckerPage.tsx` – The main page component for the rule-based symptom analysis functionality.
+* `src/components/AskAIPage.tsx` – The main page component for the conversational AI interface powered by Gemma 3n.
+* `src/services/symptomChecker.ts` – Holds the independent, non-AI, rule-based logic for symptom checking.
+* `src/services/healthAI.ts` – Manages the integration and communication logic with your local Ollama instance and the Gemma 3n model.
+* `src/hooks/useTextToSpeech.ts` – A custom React hook for utilizing browser-native Text-to-Speech capabilities.
+* `src/hooks/useVoiceInput.ts` – A custom React hook for handling browser-native Speech-to-Text input.
+* `src/store/accessibilityStore.ts` – A Zustand-based store for managing global accessibility settings and preferences within the application.
+* `public/` – Directory for static assets, like images or fonts, served directly by the web server.
 
 ---
 
 ## 🧠 Gemma 3n & Ollama Integration Details
 
-The intelligence backbone of CareWise AI is defined in `src/services/healthAI.ts`. It connects to your **local Ollama instance** for AI chat functionality:
+The intelligence backbone of CareWise AI's "Ask AI" feature is defined in `src/services/healthAI.ts`. This file establishes the connection and interaction with your **local Ollama instance** to leverage Gemma 3n for AI chat functionality.
 
-```ts
+```typescript
+// src/services/healthAI.ts (Simplified for README clarity)
 import { Ollama } from 'ollama';
 
+// Initialize Ollama client to connect to the local server
 const ollama = new Ollama({ host: 'http://localhost:11434' });
 
+/**
+ * Streams a health-related query to the local Gemma 3n model via Ollama.
+ * @param prompt The user's input query.
+ * @returns An asynchronous iterator for streamed response chunks.
+ */
 export const streamQueryHealth = async (prompt: string) => {
-  try {
-    const response = await ollama.chat({
-      model: 'gemma:4n',
-      messages: [{ role: 'user', content: prompt }],
-      stream: true,
-    });
-    return response;
-  } catch (error) {
-    console.error('Error querying Gemma 3n via Ollama:', error);
-    throw new Error('Ensure Ollama is running and gemma:4n is pulled.');
-  }
+    try {
+        const response = await ollama.chat({
+            model: 'gemma3n:e4b', // Ensure this model tag matches your pulled model
+            messages: [{ role: 'user', content: prompt }],
+            stream: true, // Enable streaming for real-time response generation
+        });
+        return response; // Returns an iterator that yields chunks of the response
+    } catch (error) {
+        console.error('Error querying Gemma 3n via Ollama:', error);
+        // Provide user-friendly error message if Ollama is not running or model not found
+        throw new Error('Failed to get AI response. Please ensure Ollama is running and the "gemma3n:e4b" model is pulled locally.');
+    }
 };
+
+// IMPORTANT: The Symptom Checker functionality (in src/services/symptomChecker.ts)
+// operates independently as a rule-based system and does NOT utilize Gemma 3n or any AI.
+// This design ensures robust, foundational health advice even if AI components are not active.
