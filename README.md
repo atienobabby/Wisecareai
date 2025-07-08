@@ -2,8 +2,7 @@
 
 **Empowering health access for everyone, everywhere, with on-device Gemma 3n intelligence.**
 
-<img width="1920" height="1032" alt="CareWise AI Project Screenshot" src="https://github.com/user-attachments/assets/268bf9a6-a835-418f-8d7c-378c0cc2971c" />
-
+<img width="1920" height="1032" alt="Image" src="https://github.com/user-attachments/assets/cac384ca-f885-45bd-a29e-80f38d848280" />
 
 
 ---
